@@ -16,6 +16,17 @@ import (
 	fatal
 */
 
+func TestSubTest(t *testing.T) {
+	t.Run("Arya", func(t *testing.T) {
+		result := HelloWorld("Arya")
+		require.Equal(t, "Hello Arya", result, "Result must be 'Hello Arya'")
+	})
+	t.Run("Rizki", func(t *testing.T) {
+		result := HelloWorld("Rizki")
+		require.Equal(t, "Hello Rizki", result, "Result must be 'Hello Rizki'")
+	})
+}
+
 func TestMain(m *testing.M) {
 	// before test
 	fmt.Println("Before Unit Test")
