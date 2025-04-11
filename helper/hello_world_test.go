@@ -16,6 +16,16 @@ import (
 	fatal
 */
 
+func TestMain(m *testing.M) {
+	// before test
+	fmt.Println("Before Unit Test")
+
+	m.Run()
+
+	// after test
+	fmt.Println("After Unit Test")
+}
+
 func TestSkip(t *testing.T) {
 	if runtime.GOOS == "windows" {
 		t.Skip("Not Supported on Windows")
