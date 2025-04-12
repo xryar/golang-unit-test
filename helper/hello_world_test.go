@@ -16,6 +16,19 @@ import (
 	fatal
 */
 
+func BenchmarkSub(b *testing.B) {
+	b.Run("Arya", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Arya")
+		}
+	})
+	b.Run("Rizki", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Arya")
+		}
+	})
+}
+
 func BenchmarkHelloWorld(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		HelloWorld("Arya")
