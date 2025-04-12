@@ -16,6 +16,18 @@ import (
 	fatal
 */
 
+func BenchmarkHelloWorld(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Arya")
+	}
+}
+
+func BenchmarkHelloWorldRizki(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Rizki")
+	}
+}
+
 func TestTableHelloWorld(t *testing.T) {
 	test := []struct {
 		name     string
