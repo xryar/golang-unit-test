@@ -16,6 +16,47 @@ import (
 	fatal
 */
 
+func TestTableHelloWorld(t *testing.T) {
+	test := []struct {
+		name     string
+		request  string
+		expected string
+	}{
+		{
+			name:     "Arya",
+			request:  "Arya",
+			expected: "Hello Arya",
+		},
+		{
+			name:     "Rizki",
+			request:  "Rizki",
+			expected: "Hello Rizki",
+		},
+		{
+			name:     "Andaru",
+			request:  "Andaru",
+			expected: "Hello Andaru",
+		},
+		{
+			name:     "Acumalaka",
+			request:  "Acumalaka",
+			expected: "Hello Acumalaka",
+		},
+		{
+			name:     "Kumalala",
+			request:  "Kumalala",
+			expected: "Hello Kumalala",
+		},
+	}
+
+	for _, test := range test {
+		t.Run(test.name, func(t *testing.T) {
+			result := HelloWorld(test.request)
+			require.Equal(t, test.expected, result)
+		})
+	}
+}
+
 func TestSubTest(t *testing.T) {
 	t.Run("Arya", func(t *testing.T) {
 		result := HelloWorld("Arya")
